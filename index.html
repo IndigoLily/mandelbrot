@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+    <meta charset='UTF-8'>
+    <title>Mandelbrot Set</title>
+  </head>
+
+  <body>
+    <div id='inverter'></div>
+    <canvas id='cnv'></canvas>
+
+    <div id='help' class='overlay'>
+      <span class='center'>
+        <table>
+          <tr><td>F1/?</td> <td>Toggle help</td></tr>
+
+          <tr class='blank'></tr>
+
+          <tr><td>Click</td> <td>zoom in at location</td></tr>
+          <tr><td>Shift-click</td> <td>zoom out at location</td></tr>
+          <tr><td>Ctrl-click</td> <td>go to location</td></tr>
+          <tr><td>Arrow keys</td> <td>move</td></tr>
+          <tr><td>+/-</td> <td>zoom in and out</td></tr>
+
+          <tr class='blank'></tr>
+
+          <tr><td>Q</td> <td>change quality and colour settings</td></tr>
+          <tr><td>W</td> <td>set location and zoom</td></tr>
+          <tr><td>R</td> <td>reset settings and location/zoom</td></tr>
+          <tr><td>I</td> <td>show info</td></tr>
+          <tr><td>P</td> <td>change palette</td></tr>
+        </table>
+
+        <p style='padding:2pt 20pt 2pt 20pt;'>
+        <a target='_blank' href='https://en.wikipedia.org/wiki/Mandelbrot_Set'>Information about the Mandelbrot Set</a>
+        </p>
+
+      </span>
+    </div>
+
+    <div id='info' class='overlay'>
+      <span class='center'>
+        <table>
+          <tr><td>Real/x location</td> <td id='real'>0</td></tr>
+          <tr><td>Imaginary/y location</td> <td id='imaginary'>0</td></tr>
+          <tr><td>Zoom</td> <td id='zoom'>1</td></tr>
+
+          <tr class='blank'></tr>
+
+          <tr><td>Iterations</td> <td id='itr'>1000</td></tr>
+          <tr><td>Anti-aliasing level</td> <td id='aa'>1</td></tr>
+          <tr><td>Colour speed</td> <td id='speed'>1</td></tr>
+          <tr><td>Colour acceleration</td> <td id='acc'>1</td></tr>
+
+          <tr class='blank'></tr>
+
+          <tr><td>Completion</td> <td id='complete'>0.00%</td></tr>
+        </table>
+      </span>
+    </div>
+
+    <div id='palette' class='overlay'>
+      <span class='center'>
+        <ol id='colours'>
+          <li><input type='color' value='#000000' onchange='update_palette()'> <input type='image' src='minus.svg' class='remove' onclick='remove_colour(event)'></li>
+          <li><input type='color' value='#ffffff' onchange='update_palette()'> <input type='image' src='minus.svg' class='remove' onclick='remove_colour(event)'></li>
+        </ol>
+        <input type='image' src='plus.svg' class='add' onclick="add_colour()">
+      </span>
+    </div>
+
+    <script src='sketch.js'></script>
+  </body>
+</html>

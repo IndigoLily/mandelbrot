@@ -1,0 +1,75 @@
+html {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, .9);
+  color: #fff;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  font-size: 14pt;
+}
+
+.center {
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.overlay a {
+  color: #fff;
+}
+
+td, tr {
+  padding: 2pt 20pt 2pt 20pt;
+}
+
+.blank {
+  height: 1em !important;
+}
+
+#info {
+  display: none;
+}
+
+#palette {
+  display: none;
+}
+
+[type='color'] {
+  height: 2em;
+  width: 4em;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.add {
+  position: relative;
+  left: 50%;
+}
+
+.remove, .add {
+  height: 1.5em;
+  width: auto;
+  cursor: pointer;
+}
+
+#inverter {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    mix-blend-mode: difference;
+}
